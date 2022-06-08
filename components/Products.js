@@ -9,7 +9,14 @@ const Products = ({ data }) => {
             {data.map((item) => (
                 <div key={item.id} className="bg-[#141414] rounded-2xl overflow-hidden flex flex-col">
                     <div className="relative w-full h-52 md:h-80 bg-center">
-                        <Image src={item.image[0]} layout="fill" objectFit="cover" objectPosition="absolute" className="brightness-75" />
+                        <Image
+                            src={item.image[0]}
+                            layout="fill"
+                            objectFit="cover"
+                            objectPosition="absolute"
+                            className="brightness-75"
+                            alt={item.image[0]}
+                        />
                         <Save className="absolute top-2 right-2 cursor-pointer stroke-white" />
                     </div>
                     <div className="p-2 md:p-4">

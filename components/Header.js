@@ -32,29 +32,42 @@ export const Header = () => {
         { title: "Slings Bags", Icon: <SlingsBag /> },
         { title: "Hand Bags", Icon: <HandBags /> },
     ];
+    const icons = [
+        {
+            Icon: <SearchIcon />,
+        },
+        {
+            Icon: <UserIcon />,
+        },
+        {
+            Icon: <SaveIcon />,
+        },
+        {
+            Icon: <CartIcon />,
+        },
+    ];
     return (
         <div>
             <div className="container mx-auto flex justify-between items-center p-4">
                 <Logo />
                 <div className="space-x-4 flex">
-                    <SearchIcon className="w-6 h-6 cursor-pointer" />
-                    <UserIcon className="w-6 h-6 cursor-pointer" />
-                    <SaveIcon className="w-6 h-6 cursor-pointer" />
-                    <CartIcon className="w-6 h-6 cursor-pointer" />
+                    {icons.map((icon) => (
+                        <p className="w-6 h-6 cursor-pointer" key={icon.Icon}>
+                            {icon.Icon}
+                        </p>
+                    ))}
                 </div>
             </div>
             <div className="flex space-x-8 justify-center my-4">
                 {navLinks.map((navLink) => (
-                    <Link href={navLink.link}>
-                        <a key={navLink.title} className="text-lg">
-                            {navLink.title}
-                        </a>
+                    <Link href={navLink.link} key={navLink.title}>
+                        <a className="text-lg">{navLink.title}</a>
                     </Link>
                 ))}
             </div>
             <div className="container mx-auto p-4 flex space-x-8 md:space-x-20 overflow-x-scroll scrollbar-hide">
                 {products.map((product) => (
-                    <div className="text-center flex flex-col items-center justify-center">
+                    <div className="text-center flex flex-col items-center justify-center" key={product.Icon}>
                         {product.Icon}
                         {product.title}
                     </div>
