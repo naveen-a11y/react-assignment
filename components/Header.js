@@ -58,7 +58,7 @@ export const Header = () => {
                     ))}
                 </div>
             </div>
-            <div className="container mx-auto flex space-x-8 my-4 overflow-x-scroll scrollbar-hide">
+            <div className="md:container md:mx-auto flex space-x-8 my-4 overflow-scroll scrollbar-hide sm:justify-center">
                 {navLinks.map((navLink) => (
                     <Link href={navLink.link} key={navLink.title}>
                         <a className="text-lg">{navLink.title}</a>
