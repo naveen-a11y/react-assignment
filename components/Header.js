@@ -47,10 +47,10 @@ export const Header = () => {
         },
     ];
     return (
-        <div>
-            <div className="container mx-auto flex justify-between items-center p-4">
+        <div className="p-4">
+            <div className="container mx-auto flex justify-between items-center">
                 <Logo />
-                <div className="space-x-4 flex">
+                <div className="space-x-2 md:space-x-4 flex items-center">
                     {icons.map((icon) => (
                         <p className="w-6 h-6 cursor-pointer" key={icon.Icon}>
                             {icon.Icon}
@@ -58,14 +58,14 @@ export const Header = () => {
                     ))}
                 </div>
             </div>
-            <div className="flex space-x-8 justify-center my-4">
+            <div className="container mx-auto flex space-x-8 my-4 overflow-x-scroll scrollbar-hide">
                 {navLinks.map((navLink) => (
                     <Link href={navLink.link} key={navLink.title}>
                         <a className="text-lg">{navLink.title}</a>
                     </Link>
                 ))}
             </div>
-            <div className="container mx-auto p-4 flex space-x-8 md:space-x-20 overflow-x-scroll scrollbar-hide">
+            <div className="container mx-auto flex space-x-8 md:space-x-20 overflow-x-scroll scrollbar-hide">
                 {products.map((product) => (
                     <div className="text-center flex flex-col items-center justify-center" key={product.Icon}>
                         {product.Icon}
